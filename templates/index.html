@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html >
+
+  <meta charset="UTF-8">
+  <title>Amazon Mobile Reviews Sentiment Analysis </title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+ <head>
+  <style>
+  body {
+  background-color: : lightblue;
+  background-image:url('https://thumbs.dreamstime.com/z/emotion-meter-11351100.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 50px;
+  width: 250px;
+}
+::placeholder { /* Firefox, Chrome, Opera */ 
+    color: yellow; 
+    font-size:15px;
+} 
+
+.button {
+    margin-left: -150px;
+    position: absolute;
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+    font-size:15px; 
+    color: rgb(0, 139, 139); 
+
+}
+</style>
+</head>     
+
+<body>
+ <div class="login">
+	<h1 style="color:purple;margin-left: -100px;"  >Amazon Mobile Reviews Sentiment Analysis</h1>
+    <form action="{{ url_for('predict')}}"method="post">
+      <textarea name="Reviews" rows="10" cols="50" style="color:blue;margin-left: -80px;"></textarea>
+    <div style="text-align:center;">
+    <button class="button" value="Sentiment Analysis">Sentiment Analysis</button>
+  </div>
+    </form>
+    <br>
+    <br>
+   <h3 style="color: blue;margin-left: -80px;">{{sentiment_analysis}}</h3>
+   </script>
+ </div>
+</body>
+</html>
